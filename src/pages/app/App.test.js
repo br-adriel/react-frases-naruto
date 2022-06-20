@@ -10,7 +10,7 @@ describe('renders the App', () => {
 
   test('it renders a quote paragraph', () => {
     render(<App />);
-    const quote = screen.getByRole('paragraph');
+    const quote = screen.getByText('Citação:');
     expect(quote).toBeInTheDocument();
   });
 
