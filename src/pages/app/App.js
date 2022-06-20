@@ -4,7 +4,11 @@ export function App() {
   return (
     <>
       <GlobalStyle />
-      <h1>Hello</h1>
+      <div>
+        <p className='quote'>Citação:</p>
+        <button>Quote No Jutsu</button>
+        <img src='' alt='' />
+      </div>
     </>
   );
 }
