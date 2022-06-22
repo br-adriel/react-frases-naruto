@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Quote = (props) => {
-  const { text = 'Loading', author = '' } = props;
+  const { text = '...', author = '' } = props;
   return (
     <Paragraph>
       <Text>{text}</Text>
