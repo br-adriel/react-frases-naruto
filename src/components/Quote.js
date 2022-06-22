@@ -18,12 +18,13 @@ const Paragraph = styled.p`
 
 const Text = styled.q`
   font-size: 1.5rem;
-  width: 100%;
+  display: block;
 `;
 
 const Author = styled.span`
   margin-right: 30px;
   margin-left: auto;
+  display: block;
 `;
 
 export default Quote;
