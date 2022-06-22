@@ -10,11 +10,11 @@ describe('it renders the Button component', () => {
 
   test('the function passed onClick works', () => {
     const callback = jest.fn();
-    render(<Button onClick={callback}>Click me</Button>);
+    render(<Button onClk={callback}>Click me</Button>);
 
     const btn = screen.getByText(/click me/i);
     fireEvent.click(btn);
 
-    expect(callback).toHaveBeenCalled(1);
+    expect(callback).toBeCalledTimes(1);
   });
 });
