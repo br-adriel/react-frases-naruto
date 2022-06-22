@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import bgImg from '../images/bg.jpeg'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -10,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     color: #333c36;
     font-family: 'Patua One', serif;
+    background: url(${bgImg}) center no-repeat;
   }
 `;
 
