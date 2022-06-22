@@ -8,12 +8,6 @@ describe('it renders the App', () => {
     expect(button).toBeInTheDocument();
   });
 
-  test('it renders a quote paragraph', () => {
-    render(<App />);
-    const quote = screen.getByText(/carregando/i);
-    expect(quote).toBeInTheDocument();
-  });
-
   test('it renders a image of naturo', () => {
     render(<App />);
     const image = screen.getByAltText(/naruto/i);
