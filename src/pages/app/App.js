@@ -1,6 +1,7 @@
 import GlobalStyle from '../../components/GlobalStyle';
 import narutoPng from '../../images/naruto.png';
 import styled from 'styled-components';
+import Quote from '../../components/Quote';
 
 export function App() {
   return (
@@ -8,10 +9,7 @@ export function App() {
       <GlobalStyle />
       <Container>
         <Content>
-          <Quotation>
-            <Quote>Carregando...</Quote>
-            <Author>-</Author>
-          </Quotation>
+          <Quote />
           <button>Quote No Jutsu</button>
         </Content>
         <NarutoImg src={narutoPng} alt='Naruto smiling with an eye closed' />
@@ -39,20 +37,4 @@ const Content = styled.section`
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
-`;
-
-const Quotation = styled.p`
-  width: 100%;
-  diplay: flex;
-  flex-direction: column;
-`;
-
-const Author = styled.span`
-  margin-right: 30px;
-  margin-left: auto;
-`;
-
-const Quote = styled.q`
-  font-size: 1.5rem;
-  width: 100%;
 `;
