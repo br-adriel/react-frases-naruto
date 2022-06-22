@@ -22,7 +22,7 @@ const Paragraph = styled.p`
   flex-direction: column;
   padding: 12px 16px;
   background: rgba(255, 255, 255, 0.7);
-  border-radius: 4px;
+  border-radius: 8px;
   backdrop-filter: blur(5px);
 `;
 
