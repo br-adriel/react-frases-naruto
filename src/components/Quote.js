@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { string } from 'prop-types';
 
 const Quote = (props) => {
   const { text = '...', author = '' } = props;
@@ -8,6 +9,11 @@ const Quote = (props) => {
       <Author>-{author}</Author>
     </Paragraph>
   );
+};
+
+Quote.propTypes = {
+  text: string,
+  author: string,
 };
 
 const Paragraph = styled.p`
