@@ -2,12 +2,12 @@ import { string, func } from 'prop-types';
 import styled from 'styled-components';
 
 const Button = (props) => {
-  const { text = '', onClk = () => {} } = props;
-  return <Btn onClick={() => onClk}>{text}</Btn>;
+  const { children, onClk = () => {} } = props;
+  return <Btn onClick={() => onClk()}>{children}</Btn>;
 };
 
 Button.propTypes = {
-  text: string,
+  children: string,
   onClk: func,
 };
 
