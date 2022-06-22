@@ -25,6 +25,7 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  gap: 20px;
 `;
 
 const NarutoImg = styled.img`
@@ -37,4 +38,5 @@ const Content = styled.section`
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
+  flex-grow: 1;
 `;
