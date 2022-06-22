@@ -2,6 +2,7 @@ import GlobalStyle from '../../components/GlobalStyle';
 import narutoPng from '../../images/naruto.png';
 import styled from 'styled-components';
 import Quote from '../../components/Quote';
+import Button from '../../components/Button';
 
 export function App() {
   return (
@@ -10,7 +11,7 @@ export function App() {
       <Container>
         <Content>
           <Quote />
-          <button>Quote No Jutsu</button>
+          <Button text='Quote No Jutsu' />
         </Content>
         <NarutoImg src={narutoPng} alt='Naruto smiling with an eye closed' />
       </Container>
