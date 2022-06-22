@@ -10,13 +10,13 @@ describe('it renders the App', () => {
 
   test('it renders a quote paragraph', () => {
     render(<App />);
-    const quote = screen.getByText('Citação:');
+    const quote = screen.getByText(/carregando/i);
     expect(quote).toBeInTheDocument();
   });
 
-  test('it renders a image', () => {
+  test('it renders a image of naturo', () => {
     render(<App />);
-    const image = screen.getByRole('img');
+    const image = screen.getByAltText(/naruto/i);
     expect(image).toBeInTheDocument();
   });
 });
