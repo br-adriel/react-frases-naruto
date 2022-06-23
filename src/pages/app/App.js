@@ -5,12 +5,17 @@ import Quote from '../../components/Quote';
 import Button from '../../components/Button';
 import { getQuote } from '../../services';
 import { useState } from 'react';
+import jutsoSound from '../../sounds/jutso.mp3';
 
 export function App() {
+  const audio = new Audio(jutsoSound);
+
   const [quote, setQuote] = useState('Carregando...');
   const [author, setAuthor] = useState('Carregando...');
 
   const loadQuote = async () => {
+    audio.play();
+
     const quoteObj = await getQuote();
 
     setQuote(quoteObj.quote);
