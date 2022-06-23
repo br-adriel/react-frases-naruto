@@ -33,17 +33,26 @@ export function App() {
 
 const Container = styled.div`
   height: 100vh;
-  padding: 0 70px;
+  padding: 0 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   gap: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const NarutoImg = styled.img`
-  height: 85%;
+  max-height: 85%;
+  max-width: 50%;
   align-self: flex-end;
+
+  @media (max-width: 768px) {
+    max-width: 80%;
+  }
 `;
 
 const Content = styled.section`
@@ -52,4 +61,9 @@ const Content = styled.section`
   align-items: flex-start;
   gap: 8px;
   flex-grow: 1;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    justify-content: center;
+  }
 `;

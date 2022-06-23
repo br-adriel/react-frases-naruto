@@ -6,7 +6,7 @@ const Quote = (props) => {
   return (
     <Paragraph>
       <Text>{text}</Text>
-      <Author>-{author}</Author>
+      <Author>- {author}</Author>
     </Paragraph>
   );
 };
@@ -17,7 +17,7 @@ Quote.propTypes = {
 };
 
 const Paragraph = styled.p`
-  max-width: 80%;
+  max-width: 100%;
   diplay: flex;
   flex-direction: column;
   padding: 12px 16px;
@@ -32,9 +32,8 @@ const Text = styled.q`
 `;
 
 const Author = styled.span`
-  margin-right: 30px;
-  margin-left: auto;
   display: block;
+  text-align: right;
 `;
 
 export default Quote;
