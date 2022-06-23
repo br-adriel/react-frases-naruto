@@ -11,7 +11,7 @@ export function App() {
       <Container>
         <Content>
           <Quote />
-          <Button text='Quote No Jutsu' />
+          <Button>Quote No Jutsu</Button>
         </Content>
         <NarutoImg src={narutoPng} alt='Naruto smiling with an eye closed' />
       </Container>
