@@ -1,26 +1,36 @@
-import GlobalStyle from '../../components/GlobalStyle';
-import narutoPng from '../../images/naruto.png';
+import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import Quote from '../../components/Quote';
 import Button from '../../components/Button';
+import GlobalStyle from '../../components/GlobalStyle';
+import Quote from '../../components/Quote';
+import narutoPng from '../../images/naruto.png';
 import { getQuote } from '../../services';
-import { useState } from 'react';
 import jutsoSound from '../../sounds/jutso.mp3';
 
+const audio = new Audio(jutsoSound);
+
 export function App() {
-  const audio = new Audio(jutsoSound);
+  const isMounted = useRef(true);
 
   const [quote, setQuote] = useState('Loading...');
   const [author, setAuthor] = useState('Loading...');
 
   const loadQuote = async () => {
-    audio.play();
-
     const quoteObj = await getQuote();
 
-    setQuote(quoteObj.quote);
-    setAuthor(quoteObj.speaker);
+    if (isMounted.current) {
+      audio.play();
+
+      setQuote(quoteObj.quote);
+      setAuthor(quoteObj.speaker);
+    }
   };
+
+  useEffect(() => {
+    loadQuote();
+
+    return () => (isMounted.current = false);
+  }, []);
 
   return (
     <>
