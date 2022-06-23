@@ -12,24 +12,29 @@ const audio = new Audio(jutsoSound);
 export function App() {
   const isMounted = useRef(true);
 
-  const [quote, setQuote] = useState('Loading...');
-  const [author, setAuthor] = useState('Loading...');
+  const [quote, setQuote] = useState({
+    text: 'Loading...',
+    author: 'Loading...',
+  });
 
   const loadQuote = async () => {
     const quoteObj = await getQuote();
 
     if (isMounted.current) {
+      setQuote({
+        text: quoteObj.quote,
+        author: quoteObj.speaker,
+      });
       audio.play();
-
-      setQuote(quoteObj.quote);
-      setAuthor(quoteObj.speaker);
     }
   };
 
   useEffect(() => {
     loadQuote();
 
-    return () => (isMounted.current = false);
+    return () => {
+      isMounted.current = false;
+    };
   }, []);
 
   return (
@@ -37,7 +42,7 @@ export function App() {
       <GlobalStyle />
       <Container>
         <Content>
-          <Quote text={quote} author={author} />
+          <Quote {...quote} />
           <Button onClk={loadQuote}>Quote No Jutsu</Button>
         </Content>
         <NarutoImg src={narutoPng} alt='Naruto smiling with an eye closed' />
