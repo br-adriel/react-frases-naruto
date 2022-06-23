@@ -11,6 +11,10 @@ const server = setupServer(
 );
 
 describe('it renders the App', () => {
+  beforeAll(() => server.listen());
+  afterEach(() => server.resetHandlers());
+  afterAll(() => server.close());
+
   test('it renders a button', () => {
     render(<App />);
     const button = screen.getByRole('button');
@@ -22,12 +26,6 @@ describe('it renders the App', () => {
     const image = screen.getByAltText(/naruto/i);
     expect(image).toBeInTheDocument();
   });
-});
-
-describe('The app works correctly', () => {
-  beforeAll(() => server.listen());
-  afterEach(() => server.resetHandlers());
-  afterAll(() => server.close());
 
   test('it updates the quote when button is clicked', async () => {
     render(<App />);
@@ -35,7 +33,7 @@ describe('The app works correctly', () => {
     const btn = screen.getByRole('button');
     fireEvent.click(btn);
 
-    const quote = await screen.findByText(/test quote/i);
+    const quote = await screen.findByText(/speaker/i);
     expect(quote).toBeInTheDocument();
   });
 
