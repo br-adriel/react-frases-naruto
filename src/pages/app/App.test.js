@@ -30,10 +30,17 @@ describe('The app works correctly', () => {
   afterAll(() => server.close());
 
   test('it updates the quote when button is clicked', async () => {
-    render(<App></App>);
+    render(<App />);
 
     const btn = screen.getByRole('button');
     fireEvent.click(btn);
+
+    const quote = await screen.findByText(/test quote/i);
+    expect(quote).toBeInTheDocument();
+  });
+
+  test('it loads a quote automatically when it opens', async () => {
+    render(<App />);
 
     const quote = await screen.findByText(/test quote/i);
     expect(quote).toBeInTheDocument();
