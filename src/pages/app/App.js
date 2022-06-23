@@ -10,8 +10,8 @@ import jutsoSound from '../../sounds/jutso.mp3';
 export function App() {
   const audio = new Audio(jutsoSound);
 
-  const [quote, setQuote] = useState('Carregando...');
-  const [author, setAuthor] = useState('Carregando...');
+  const [quote, setQuote] = useState('Loading...');
+  const [author, setAuthor] = useState('Loading...');
 
   const loadQuote = async () => {
     audio.play();
