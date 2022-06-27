@@ -10,8 +10,7 @@ import jutsoSound from '../../sounds/jutso.mp3';
 const audio = new Audio(jutsoSound);
 
 export function App() {
-  const isMounted = useRef(true);
-
+  const isMounted = useRef(false);
   const [quote, setQuote] = useState({
     text: 'Loading...',
     author: 'Loading...',
@@ -30,11 +29,10 @@ export function App() {
   };
 
   useEffect(() => {
+    isMounted.current = true;
     loadQuote();
 
-    return () => {
-      isMounted.current = false;
-    };
+    return () => (isMounted.current = false);
   }, []);
 
   return (

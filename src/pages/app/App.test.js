@@ -28,12 +28,23 @@ describe('it renders the App', () => {
   });
 
   test('it updates the quote when button is clicked', async () => {
+    const customResponse = {
+      speaker: 'custom test speaker',
+      quote: 'teste quote',
+    };
+
     render(<App />);
+
+    server.use(
+      rest.get(process.env.REACT_APP_API, (req, res, ctx) => {
+        return res(ctx.json(customResponse));
+      })
+    );
 
     const btn = screen.getByRole('button');
     fireEvent.click(btn);
 
-    const quote = await screen.findByText(/speaker/i);
+    const quote = await screen.findByText(/custom test speaker/i);
     expect(quote).toBeInTheDocument();
   });
 
