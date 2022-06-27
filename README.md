@@ -19,7 +19,7 @@ instalados
 1. Baixe e execute a [Naruto Quotes API](https://github.com/celso-henrique/naruto-quotes-server)
    de acordo com as instruções do seu repositório
 
-2. Faça uma cópia do arquivo `env.example` e o renomeie para `.env`
+2. Faça uma cópia do arquivo `.env.example` e o renomeie para `.env`
 
 3. Baixe o código do projeto e abra sua pasta no powershell, terminal ou CMD
 
