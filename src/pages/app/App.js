@@ -43,7 +43,7 @@ export function App() {
       <Container>
         <Content>
           <Quote {...quote} />
-          <Button onClk={loadQuote}>Quote No Jutsu</Button>
+          <Button onClick={() => loadQuote()}>Quote No Jutsu</Button>
         </Content>
         <NarutoImg src={narutoPng} alt='Naruto smiling with an eye closed' />
       </Container>

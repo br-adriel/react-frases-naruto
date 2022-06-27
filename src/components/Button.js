@@ -1,17 +1,6 @@
-import { string, func } from 'prop-types';
 import styled from 'styled-components';
 
-const Button = (props) => {
-  const { children, onClk = () => {} } = props;
-  return <Btn onClick={() => onClk()}>{children}</Btn>;
-};
-
-Button.propTypes = {
-  children: string,
-  onClk: func,
-};
-
-const Btn = styled.button`
+const Button = styled.button`
   border: none;
   background: #332c36;
   color: #fff;
